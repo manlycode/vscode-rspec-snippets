@@ -1,13 +1,13 @@
 {
     "author": {
-        "name" : "Karuna Murti",
-        "email" : "karuna.murti@gmail.com"
+        "name" : "Chris Rittersdorf",
+        "email" : "manlycode@gmail.com"
 	},
-    "name": "rspec-snippets",
-    "displayName": "rspec-snippets",
-    "description": "Snippets for RSpec",
+    "name": "rspec-snippets-doublequotes",
+    "displayName": "rspec-snippets-doublequotes",
+    "description": "Snippets for RSpec using doublequotes",
     "version": "0.0.4",
-    "publisher": "karunamurti",
+    "publisher": "manlycode",
     "engines": {
         "vscode": "^1.0.0"
     },
@@ -25,7 +25,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/karuna/vscode-rspec-snippetss"
+        "url": "https://github.com/manlycode/vscode-rspec-snippets"
+    },
+
+    "scripts": {
+        "vars": "env | grep npm_package_"
     },
     "license": "MIT"
 }
