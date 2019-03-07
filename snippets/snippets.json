@@ -8,12 +8,12 @@
 			"  end",
 			"  def matches?(actual)",
 			"    @actual = actual",
-			"    # Satisfy expectation here. Return false or raise an error if it's not met.",
+			"    # Satisfy expectation here. Return false or raise an error if it\"s not met.",
 			"    ${0:@actual.reverse.should == @$3}",
 			"    true",
 			"  end",
 			"  def failure_message",
-			"    \"expected #{@actual.inspect} to $2 #{@$3.inspect}, but it didn't\"",
+			"    \"expected #{@actual.inspect} to $2 #{@$3.inspect}, but it didn\"t\"",
 			"  end",
 			"  def negative_failure_message",
 			"    \"expected #{@actual.inspect} not to $2 #{@$3.inspect}, but it did\"",
@@ -29,7 +29,7 @@
 		"prefix": "dest",
 		"body": [
 			"describe ${1:Type} do",
-			"  ${2:it '${3:does something}' do",
+			"  ${2:it \"${3:does something}\" do",
 			"    $0",
 			"  end}",
 			"end"
@@ -39,8 +39,8 @@
 	"dests": {
 		"prefix": "dests",
 		"body": [
-			"describe ${1:Type}, '${2:description}' do",
-			"  it '${3:does something}' do",
+			"describe ${1:Type}, \"${2:description}\" do",
+			"  it \"${3:does something}\" do",
 			"    $0",
 			"  end",
 			"end"
@@ -50,7 +50,7 @@
 	"resh": {
 		"prefix": "resh",
 		"body": [
-			"require 'spec_helper'"
+			"require \"spec_helper\""
 		],
 		"description": "Require spec_helper"
 	},
@@ -64,7 +64,7 @@
 	"st": {
 		"prefix": "st",
 		"body": [
-			"Story '${1:title}', %{",
+			"Story \"${1:title}\", %{",
 			"  As a ${2:role}",
 			"  I want ${3:feature}",
 			"  So that ${4:value}",
@@ -175,38 +175,38 @@
 	"con": {
 		"prefix": "con",
 		"body": [
-			"context '${1:description}' do",
+			"context \"${1:description}\" do",
 			"  $0",
 			"end"
 		],
-		"description": "context 'description' do … end"
+		"description": "context \"description\" do … end"
 	},
 	"des": {
 		"prefix": "des",
 		"body": [
-			"describe '${1:description}' do",
+			"describe \"${1:description}\" do",
 			"  $0",
 			"end"
 		],
-		"description": "describe 'description' do … end"
+		"description": "describe \"description\" do … end"
 	},
 	"desi": {
 		"prefix": "desi",
 		"body": [
-			"describe '#${1:description}' do",
+			"describe \"#${1:description}\" do",
 			"  $0",
 			"end"
 		],
-		"description": "describe '#description' do … end"
+		"description": "describe \"#description\" do … end"
 	},
 	"desc": {
 		"prefix": "desc",
 		"body": [
-			"describe '::${1:description}' do",
+			"describe \"::${1:description}\" do",
 			"  $0",
 			"end"
 		],
-		"description": "describe '::description' do … end"
+		"description": "describe \"::description\" do … end"
 	},
 	"descln": {
 		"prefix": "descln",
@@ -508,27 +508,27 @@
 	"fea": {
 		"prefix": "fea",
 		"body": [
-			"feature '${1:description}' do",
+			"feature \"${1:description}\" do",
 			"  $0",
 			"end"
 		],
-		"description": "feature 'description' do … end"
+		"description": "feature \"description\" do … end"
 	},
 	"idou": {
 		"prefix": "idou",
 		"body": [
-			"instance_double('${1:ClassName}'${2:, ${3:method: nil}}) $0"
+			"instance_double(\"${1:ClassName}\"${2:, ${3:method: nil}}) $0"
 		],
-		"description": "instance_double('class')"
+		"description": "instance_double(\"class\")"
 	},
 	"it": {
 		"prefix": "it",
 		"body": [
-			"it '${1:does something}' do",
+			"it \"${1:does something}\" do",
 			"\t$0",
 			"end"
 		],
-		"description": "it 'does something' do … end"
+		"description": "it \"does something\" do … end"
 	},
 	"itie": {
 		"prefix": "itie",
@@ -547,14 +547,14 @@
 	"itsbl": {
 		"prefix": "itsbl",
 		"body": [
-			"it_should_behave_like ${2:'$1'}$0"
+			"it_should_behave_like ${2:\"$1\"}$0"
 		],
 		"description": "it_should_behave_like"
 	},
 	"itbl": {
 		"prefix": "itbl",
 		"body": [
-			"it_behaves_like ${2:'$1'}$0"
+			"it_behaves_like ${2:\"$1\"}$0"
 		],
 		"description": "it_behaves_like"
 	},
@@ -575,7 +575,7 @@
 	"moc": {
 		"prefix": "moc",
 		"body": [
-			"${1:var} = mock('${2:mock_name}'${3:, null_object: true})$0"
+			"${1:var} = mock(\"${2:mock_name}\"${3:, null_object: true})$0"
 		],
 		"description": "mock"
 	},
@@ -596,14 +596,14 @@
 	"pending": {
 		"prefix": "pending",
 		"body": [
-			"pending${1: '${2:reason}'}"
+			"pending${1: \"${2:reason}\"}"
 		],
 		"description": "pending"
 	},
 	"rerh": {
 		"prefix": "rerh",
 		"body": [
-			"require 'rails_helper'"
+			"require \"rails_helper\""
 		],
 		"description": "Require rails_helper"
 	},
@@ -624,11 +624,11 @@
 	"sce": {
 		"prefix": "sce",
 		"body": [
-			"scenario '${1:does something}' do",
+			"scenario \"${1:does something}\" do",
 			"  $0",
 			"end"
 		],
-		"description": "scenario 'does something' do … end"
+		"description": "scenario \"does something\" do … end"
 	},
 	"bef": {
 		"prefix": "bef",
