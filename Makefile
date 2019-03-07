@@ -1,6 +1,10 @@
 VERSION = $(shell node -p -e "require('./package.json').version")
-TARGET := rspec-snippets-doublequotes-$(VERSION).vsix
+PUBLISHER = $(shell node -p -e "require('./package.json').publisher")
+EXTENSION_NAME = $(shell node -p -e "require('./package.json').name")
+FULL_NAME = $(PUBLISHER).$(EXTENSION_NAME)
 EXTENSION_DIR := $(HOME)/.vscode/extensions
+
+TARGET := $(EXTENSION_NAME)-$(VERSION).vsix
 
 .PHONY: default
 default: $(TARGET)
@@ -9,13 +13,16 @@ default: $(TARGET)
 clean:
 	rm $(TARGET)
 
+.PHONY: uninstall
+uninstall:
+	code --ununinstall-extension $(FULL_NAME)
+
 .PHONY: install
-install:
-	cp $(TARGET) $(EXTENSION_DIR)
+install: $(TARGET) uninstall
+	code --install-extension $<
 
 .PHONY: publish
 publish: $(TARGET)
-
 
 $(TARGET):
 	vsce package
