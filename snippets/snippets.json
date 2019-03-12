@@ -28,7 +28,7 @@
 	"dest": {
 		"prefix": "dest",
 		"body": [
-			"describe ${1:Type} do",
+			"RSpec.describe ${1:Type} do",
 			"  ${2:it \"${3:does something}\" do",
 			"    $0",
 			"  end}",
@@ -39,7 +39,7 @@
 	"dests": {
 		"prefix": "dests",
 		"body": [
-			"describe ${1:Type}, \"${2:description}\" do",
+			"RSpec.describe ${1:Type}, \"${2:description}\" do",
 			"  it \"${3:does something}\" do",
 			"    $0",
 			"  end",
@@ -202,7 +202,7 @@
 	"desc": {
 		"prefix": "desc",
 		"body": [
-			"describe \"::${1:description}\" do",
+			"describe ${1:description} do",
 			"  $0",
 			"end"
 		],
